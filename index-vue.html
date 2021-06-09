@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <link rel="stylesheet" href="assets/style/style.css">
   <title>HTML-Dischi</title>
@@ -11,8 +12,44 @@
   
   <div id="root">
 
+    <header class='color_bl_light'>
+      <div class='left'>
+        <i class="fab fa-spotify"></i>
+      </div>
+      <div class="right">
+        <select name="select_gen" id="gen">
+        <option value="default">Generi Musicali</option>
+          <option value="rock">rock</option>
+          <option value="blues">blues</option>
+          <option value="pop">pop</option>
+          <option value="reggae">reggae</option>
+        </select>
+      </div>
+      </header>
+    
+      <main>
+        <div class="wrapper" >
+          
+          <div class="card color_bl_light"
+            v-for="album in listcover"
+          > 
+    
+            <img :src="album.poster" :alt="album.title">
+            <h2>
+              {{ album.title }}
+            </h2>
+            <h1>
+              {{ album.author }}
+            </h1>
+            <h3>
+              {{ album.year }}
+            </h3>
 
+          </div>
 
+        </div>
+      </main>
+    
   </div>
 
 
